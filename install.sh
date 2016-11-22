@@ -11,7 +11,7 @@ if [ -z "$CHICKTECH_DIR" ]; then
 fi
 
 chicktech_latest_version() {
-  echo "v0.1.0"
+  echo "master"
 }
 
 #
@@ -193,7 +193,7 @@ chicktech_do_install() {
     fi
   fi
 
-  echo "=> Close and reopen your terminal to start using chicktech"
+  . $CHICKTECH_DIR/chicktech.sh
   chicktech_unset
 }
 
