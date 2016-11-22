@@ -193,7 +193,6 @@ chicktech_do_install() {
     fi
   fi
 
-  . $CHICKTECH_DIR/chicktech.sh
   chicktech_unset
 }
 

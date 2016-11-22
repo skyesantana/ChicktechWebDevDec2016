@@ -46,9 +46,6 @@ chicktech() {
             echo '    chicktech help                                               Show this message'
             echo '    chicktech home                                               Go to the Chicktech home dir'
             echo
-            echo 'Note:'
-            echo '    to remove, delete, or uninstall chicktech - just remove the `$CHICKTECH_DIR` folder (usually `~/.chicktech`)'
-            echo
             ;;
     esac
 }
