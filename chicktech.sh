@@ -39,7 +39,7 @@ chicktech() {
         return
     fi
 
-    case "$1" in)
+    case $1 in
         "help")
             echo
             echo 'Usage:'
