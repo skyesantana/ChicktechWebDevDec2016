@@ -1,32 +1,51 @@
-window.mailgun = function (config) {
-    config = config || {
-        key: "key-e8b3ee50f2cd733f6c9b083b1e4f27e2",
-        host: "api.mailgun.net/v3/sandbox5f2da9c7bad44dfe8119378cc4f3a977.mailgun.org"
-    };
+(function ($el) {
+    var Mailer = function (config) {
+        config = config || {
+            host: "smtp.mailgun.org",
+            password: "aaada5417872351f063866a686a1d28e",
+            username: "postmaster@sandbox5f2da9c7bad44dfe8119378cc4f3a977.mailgun.org"
+        };
 
-    var baseUrl = "https://api:" + config.key + "@" + config.host;
+        var baseUrl = "https://api:" + config.key + "@" + config.host;
 
-    return {
-        send: function (data, callback) {
-            var params,
-                req = new XMLHttpRequest();
+        return {
+            _flush: function () {
+                var message = mailer.messages.pop();
+                if(!message) return;
+                $el.Email.send(message.from,
+                               message.to,
+                               message.subject,
+                               message.body,
+                               config.host,
+                               config.username,
+                               config.password);
 
-            for (var key in data) {
-                if (data.hasOwnProperty(key)) {
-                    if (params) {
-                        params = params + "&";
-                    }
-                    params = params + key + "=" + data[key];
+            },
+            messages: [],
+            send: function (message) {
+                if (typeof message == "string") {
+                    message = {
+                        body: message
+                    };
                 }
-            }
-            req.open("POST", baseUrl + "/messages", true);
-            req.send(params);
-            console.log('Attempting to send email');
-            req.onreadystatechange = function () {
-                console.log('XMLHttpRequest on ready state change');
+
+                message.from = message.from || "chicktechwebdevdec2016@mailinator.com";
+                message.subject = message.subject || "Hey! You got a message";
+                message.to = message.to || "chicktechwebdevdec2016@mailinator.com";
+
+                mailer.messages.push(message);
             }
         }
+    };
+    var $script = document.createElement('script');
+    $script.async = true;
+    $script.onload = function () {
+        setInterval(mailer._flush, 1000);
     }
-};
+    $script.src = "http://smtpjs.com/smtp.js";
+    $script.type = "text/javascript";
+    document.getElementsByTagName('head')[0].appendChild($script);
 
-window.mailer = mailgun();
+    $el.Mailer = Mailer;
+    $el.mailer = Mailer();
+})(window);
