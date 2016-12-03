@@ -30,7 +30,7 @@
                         <h2>Web Development Workshop</h2>
                     </header>
 
-                    <p>Welcome, students</p>
+                    <p>Welcome, students!</p>
 
                     <div style="display: flex; flex-direction: row; justify-content: center;">
                         <div style="height:150px; width: 150px; background-image:url('https://www.w3.org/html/logo/downloads/HTML5_1Color_Black.png');background-repeat:no-repeat;background-size:100% 100%;background-position:center;"></div>
@@ -38,7 +38,9 @@
                         <div style="height:150px; width: 150px; background-image:url('http://www.mcainternship.in/images/logo/javascript-logo.png');background-repeat:no-repeat;background-size:100% 100%;background-position:center;"></div>
                     </div>
 
-                    <p>Follow along at <a href="maxenglander.com/ChicktechWebDevDec2016/slides">maxenglandercom/ChicktechWebDevDec2016</a>!</p>
+                    <div style="white-space:nowrap;">
+                        <a href="maxenglander.com/ChicktechWebDevDec2016/slides" target="_blank">slides</a> | <a href="" target="_blank">live stream</a>
+                    </div>
                 </section>
                 <section data-background-color="#FCE4EC">
                     <header>
@@ -142,7 +144,7 @@
                                 <ol>
                                     <li style="white-space:nowrap;">
                                         <input type="checkbox" style="height:25px;" />
-                                        <span>Go to <a href="https://github.com/join">GitHub</a></span>
+                                        <span>Go to <a href="https://github.com/join" target="_blank">GitHub</a></span>
                                     </li>
                                     <li style="white-space:nowrap;">
                                         <input type="checkbox" style="height:25px;" />
@@ -196,7 +198,11 @@
                                     </li>
                                     <li style="white-space:nowrap;">
                                         <input type="checkbox" style="height:25px;" />
-                                        <span>Click <a href="https://github.com/maxenglander/ChicktechWebDevDec2016">here</a> to go to your <a href="https://github.com/maxenglander/ChicktechWebDevDec2016">starter kit</a></span>
+                                        <span>Go to your inbox, open email to verify your email address</span>
+                                    </li>
+                                    <li style="white-space:nowrap;">
+                                        <input type="checkbox" style="height:25px;" />
+                                        <span>Click <a href="https://github.com/maxenglander/ChicktechWebDevDec2016" target="_blank">here</a> to go to your starter kit</span>
                                     </li>
                                     <li style="white-space:nowrap;">
                                         <input type="checkbox" style="height:25px;" />
@@ -475,31 +481,33 @@
                     </section>
                 </section>
                 <section data-background-color="#F5F5F5">
-                    <header>
-                        <h2>Getting into HTML</h2>
-                    </header>
+                    <section>
+                        <header>
+                            <h2>Getting into HTML</h2>
+                        </header>
 
-                    <div style="display: flex; flex-direction: row; justify-content: center; align-items:center;">
-                        <div style="background-color:#BDBDBD;padding: 20px">
-                            <div style="height:150px; background-image:url('https://www.w3.org/html/logo/downloads/HTML5_1Color_Black.png');background-repeat:no-repeat;background-size:contain;background-position:center;"></div>
+                        <div style="display: flex; flex-direction: row; justify-content: center; align-items:center;">
+                            <div style="background-color:#BDBDBD;padding: 20px">
+                                <div style="height:150px; background-image:url('https://www.w3.org/html/logo/downloads/HTML5_1Color_Black.png');background-repeat:no-repeat;background-size:contain;background-position:center;"></div>
+                                <div style="padding:20px;">
+                                    <p>The Bones</p>
+                                </div>
+                            </div>
                             <div style="padding:20px;">
-                                <p>The Bones</p>
+                                <div style="height:150px; background-image:url('https://www.ntu.edu.sg/home/ehchua/programming/webprogramming/images/css3.png');background-repeat:no-repeat;background-size:contain;background-position:center;"></div>
+                                <div style="padding:20px;">
+                                    <p>The Skin</p>
+                                </div>
+                            </div>
+                            <div style="padding:20px;">
+                                <div style="height:150px; background-image:url('http://www.mcainternship.in/images/logo/javascript-logo.png');background-repeat:no-repeat;background-size:contain;background-position:center;"></div>
+                                <div style="padding:20px;">
+                                <div>
+                                    <p>Muscles and Nerves</p>
+                                </div>
                             </div>
                         </div>
-                        <div style="padding:20px;">
-                            <div style="height:150px; background-image:url('https://www.ntu.edu.sg/home/ehchua/programming/webprogramming/images/css3.png');background-repeat:no-repeat;background-size:contain;background-position:center;"></div>
-                            <div style="padding:20px;">
-                                <p>The Skin</p>
-                            </div>
-                        </div>
-                        <div style="padding:20px;">
-                            <div style="height:150px; background-image:url('http://www.mcainternship.in/images/logo/javascript-logo.png');background-repeat:no-repeat;background-size:contain;background-position:center;"></div>
-                            <div style="padding:20px;">
-                            <div>
-                                <p>The Muscles</p>
-                            </div>
-                        </div>
-                    </div>
+                    </section>
                 </section>
 			</div>
 		</div>
@@ -510,15 +518,15 @@
 		<script>
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
-				history: true,
-
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-                ]
+                ],
+				history: true,
+                slideNumber: true
 			});
 		</script>
 	</body>
