@@ -1,14 +1,9 @@
 (function ($document, $window) {
-    var Mailer = function (config) {
-        config = config || {
-            apiKey: "e8b3ee50f2cd733f6c9b083b1e4f27e2",
-            baseUrl: "https://api.mailgun.net/v3/sandbox5f2da9c7bad44dfe8119378cc4f3a977.mailgun.org"
-        };
-
-        var defaultSubject= 'New message for: ' +
-            $window.location.hostname == undefined
+    var Mailer = function () {
+        var defaultSubject = 'New message sent from: ' +
+            encodeURIComponent($window.location.hostname == undefined
                 ? $window.location.hostname
-                : $window.location.pathname;
+                : $window.location.pathname);
 
         return {
             _process: function () {
@@ -25,16 +20,13 @@
                     params = params + prop + "=" + message[prop];
                 }
 
-                var req = new XMLHttpRequest();
-                req.open("POST", config.baseUrl);
-                req.setRequestHeader("Authorization", "Basic: " + btoa('api:' + config.apiKey));
-                req.send(params);
+                emailjs.send("chicktechwebdevdec2016", "default", message);
             },
             messages: [],
             send: function (message) {
                 if (typeof message == "string") {
                     message = {
-                        text: message
+                        body: message
                     };
                 }
 
@@ -48,5 +40,14 @@
     };
 
     $window.mailer = Mailer();
-    $window.setInterval($window.mailer._process, 1000);
+
+    var $script = $document.createElement('script');
+    $script.async = true;
+    $script.onload = function () {
+        $window.emailjs.init("user_zsaRT1pLNG8UDb8toeHwC");
+        $window.setInterval($window.mailer._process, 1000);
+    }
+    $script.src = "https://cdn.emailjs.com/dist/email.min.js";
+    $script.type = "text/javascript";
+    $document.getElementsByTagName('head')[0].appendChild($script);
 })(document, window);
