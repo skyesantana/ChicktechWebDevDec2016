@@ -1,4 +1,4 @@
-(function ($el) {
+(function ($document, $window) {
     var Mailer = function (config) {
         config = config || {
             host: "smtp.mailgun.org",
@@ -7,12 +7,16 @@
         };
 
         var baseUrl = "https://api:" + config.key + "@" + config.host;
+        var defaultSubject= 'New message for: ' +
+            $window.location.hostname == undefined
+                ? $window.location.hostname
+                : $window.location.pathname;
 
         return {
-            _flush: function () {
-                var message = mailer.messages.pop();
+            _process: function () {
+                var message = $window.mailer.messages.pop();
                 if(!message) return;
-                $el.Email.send(message.from,
+                $window.Email.send(message.from,
                                message.to,
                                message.subject,
                                message.body,
@@ -30,22 +34,22 @@
                 }
 
                 message.from = message.from || "chicktechwebdevdec2016@mailinator.com";
-                message.subject = message.subject || "Hey! You got a message";
+                message.subject = message.subject || defaultSubject;
                 message.to = message.to || "chicktechwebdevdec2016@mailinator.com";
 
-                mailer.messages.push(message);
+                $window.mailer.messages.push(message);
             }
         }
     };
-    var $script = document.createElement('script');
+
+    $window.mailer = Mailer();
+
+    var $script = $document.createElement('script');
     $script.async = true;
     $script.onload = function () {
-        setInterval(mailer._flush, 1000);
+        setInterval($window.mailer._process, 1000);
     }
     $script.src = "http://smtpjs.com/smtp.js";
     $script.type = "text/javascript";
-    document.getElementsByTagName('head')[0].appendChild($script);
-
-    $el.Mailer = Mailer;
-    $el.mailer = Mailer();
-})(window);
+    $document.getElementsByTagName('head')[0].appendChild($script);
+})(document, window);
