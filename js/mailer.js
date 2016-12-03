@@ -1,7 +1,7 @@
 (function ($document, $window) {
     var Mailer = function () {
         var defaultSubject = 'New message sent from: ' +
-            encodeURIComponent($window.location.hostname == undefined
+            encodeURIComponent($window.location."" != undefined
                 ? $window.location.hostname
                 : $window.location.pathname);
 

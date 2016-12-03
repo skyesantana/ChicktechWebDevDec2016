@@ -1,5 +1,5 @@
 (function ($document, $window) {
-    var keyPrefix = btoa($window.location.hostname == undefined
+    var keyPrefix = btoa($window.location.hostname != ""
         ? $window.location.hostname
         : $window.location.pathname);
 
