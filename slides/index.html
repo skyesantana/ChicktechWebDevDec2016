@@ -1020,7 +1020,93 @@ This is a site about me.
                         </header>
 
                         <div style="text-align:left;">
+                            <pre><code data-trim no-escape>
+<!-- Other stuff that was here -->
+&lt;body&gt;
+    <div>
+        <!-- Other stuff that was here here -->
+
+        <!-- Add this -->
+        <section>
+            <header>
+                <h2>Contact</h2>
+            </header>
+
+            &lt;textarea style="width:100%;"/&gt;
+            <button>Send</button>
+        </section>
+    </div>
+&lt;/body&gt;
+                            </code></pre>
+                            <p>What new HTML elements do we see?</p>
+                            <p>What new CSS elements do we see?</p>
                         </div>
+                    </section>
+                    <section>
+                        <header>
+                            <h2>Responding to events</h2>
+                        </header>
+
+                        <div style="text-align:left;">
+                            <p>We have a contact form, but right now it
+                                doesn't <em>do</em> anything.</p>
+                            <p>Let's make it take an action when the user
+                                clicks the send button.</p>
+                            <pre><code data-trim no-escape>
+<!-- Other stuff that was here -->
+<button onclick="alert('Do something!')">Send</button>
+<!-- Other stuff that was here -->
+                            </code></pre>
+
+                            <p>What new things do we see here?</p>
+                        </div>
+                    </section>
+                    <section>
+                        <header>
+                            <h2>Capture user input</h2>
+                        </header>
+
+                        <div style="text-align:left;">
+                            </p>How can we access the user's input?</p>
+
+                            <p>First, give the &lt;textarea&gt; a unique ID:</p>
+                            <pre><code data-trim no-escape>
+<!-- Other stuff that was here -->
+&lt;textarea id="message" style="width:100%;" /&gt;
+<!-- Other stuff that was here -->
+                            </code></pre>
+
+                            <p>Then, use that ID to get the user's input:</p>
+                            <pre><code data-trim no-escape>
+<!-- Other stuff that was here -->
+<button onclick="alert(document.getElementById('message').value)">Send</button>
+<!-- Other stuff that was here -->
+                            </code></pre>
+
+                        </div>
+                    </section>
+                    <section>
+                        <header>
+                            <h2>Send an email!</h2>
+                        </header>
+
+                        <div style="text-align:left;">
+                            </p>Import the mailer library:</p>
+                            <pre><code data-trim no-escape>
+&lt;head&gt;
+    <script src="js/mailer.js" type="text/javascript"></script>
+&lt;/head&gt;
+<!-- Everything else here -->
+                            </code></pre>
+
+                            <p>Next, use the mailer library to send an email:</p>
+                            <pre><code data-trim no-escape>
+<!-- Other stuff that was here -->
+<button onclick="mailer.send(document.getElementById('message').value)">Send</button>
+<!-- Other stuff that was here -->
+                            </code></pre>
+                        </div>
+                    </section>
                 </section>
 			</div>
 		</div>
