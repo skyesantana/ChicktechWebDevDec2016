@@ -1107,7 +1107,121 @@ This is a site about me.
                             </code></pre>
                         </div>
                     </section>
+                    <section>
+                        <header>
+                            <h3>Compare and contrast</h3>
+                        </header>
+                        <div style="text-align:left;">
+                            <p>Starting from an action-less button:</p>
+                            <pre><code><button>Send</button></code></pre>
+
+                            <p>We added a reaction to the <em>onclick</em> event:</p>
+                            <pre><code><button onclick="alert('Do something!')">Send</button></code></pre>
+
+                            <p>Then we captured the user's input:</p>
+                            <pre><code><button onclick="alert(document.getElementById('message').value)">Send</button></code></pre>
+
+                            <p>And sent it in an email:</p>
+                            <pre><code><button onclick="mailer.send(document.getElementById('message').value)">Send</button></code></pre>
+                        </div>
+                    </section>
+                    <section>
+                        <header>
+                            <h3>Picking apart JS - <em>alert</em></h3>
+                        </header>
+
+                        <div style="text-align:left;">
+                            <p>Open Chrome Web Inspector, and go to the Console tab.</p>
+                            <p>Type in the following, hitting Enter after each semi-colon:</p>
+
+                            <pre><code>alert;</code></pre>
+                            <pre><code>alert("hi");</code></pre>
+                            <pre><code>alert("goodbye");</code></pre>
+                            <pre><code>typeof "hi";</code></pre>
+                            <pre><code>typeof "goodbye";</code></pre>
+
+                            <p><em>alert</em> is a <em>function</em> which can be <em>called</em> with a <em>string</em>.</p>
+                            <p>When it is <em>called</em>, it displays the <em>string</em> to the user.</p>
+                        </div>
+                    </section>
+                    <section>
+                        <header>
+                            <h3>Picking apart JS - <em>document</em></h3>
+                        </header>
+
+                        <div style="text-align:left;">
+                            <p>Open Chrome Web Inspector, and go to the Console tab.</p>
+                            <p>Type in the following, hitting Enter after each semi-colon:</p>
+
+                            <pre><code>document;</code></pre>
+
+                            <p><em>document</em> is an <em>object</em> representing our entire web page.</p>
+                            <p>Expand the arrow to see what's inside.</p>
+                        </div>
+                    </section>
+                    <section>
+                        <header>
+                            <h3>Picking apart JS - <em>getElementById</em></h3>
+                        </header>
+
+                        <div style="text-align:left;">
+                            <p>Open Chrome Web Inspector, and go to the Console tab.</p>
+                            <p>Type in the following, hitting Enter after each semi-colon:</p>
+
+                            <pre><code>getElementById;</code></pre>
+                            <pre><code>document.getElementById;</code></pre>
+                            <pre><code>document.getElementById("goodbye");</code></pre>
+                            <pre><code>document.getElementById("message");</code></pre>
+                            <pre><code>document.getElementById("message").value;</code></pre>
+
+                            <p><em>getElementById</em> is a <em>function</em> attached to the <em>document</em>
+                                object, which can be <em>called</em> a <em>string</em>.</p>
+                            <p>When it is <em>called</em>, it tries to find and return an <em>element</em>
+                                in the <em>document</em> with the same <em>id</em> as the <em>string</em>.</p>
+                        </div>
+                    </section>
+                    <section>
+                        <header>
+                            <h3>Picking apart JS - <em>mailer</em> and <em>send</em></h3>
+                        </header>
+
+                        <div style="text-align:left;">
+                            <p>Open Chrome Web Inspector, and go to the Console tab.</p>
+                            <p>Type in the following, hitting Enter after each semi-colon:</p>
+
+                            <pre><code>mailer;</code></pre>
+                            <pre><code>mailer.send;</code></pre>
+
+                            <p><em>mailer</em> is an <em>object</em> which we imported by adding this to the page:</p>
+                            <code><pre><script src="js/mailer.js" type="text/javascript"></script></code></pre>
+                            <p><em>js/mailer.js</em> is included in your starter kit - you can open it from your editor.</p>
+                            <p><em>send</em> is an <em>function</em> attached to the <em>mailer</em> object,
+                                which can be <em>called</em> with a <em>string</em>.</p>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Recap and free time</h3>
+
+                        <div style="text-align: left;">
+                            <p>JavaScript has <em>function</em>s which can be <em>called</em>
+                                with <em>arguments</em>.</p>
+                            <p>JavaScript has <em>object</em>s which can have other <em>object</em>s
+                                and <em>function</em>s attached to them.</p>
+                            <p>JavaScript libraries can be imported into a web page with the <em>script</em>
+                                element.</p>
+                            <p>JavaScript <em>function</em>s can be <em>called</em> when someone
+                                clicks an HTML element.</p>
+                        </div>
+                    </section>
                 </section>
+                <section data-background-color="#FCE4EC">
+                    <header>
+                        <h2>Pause and save your work</h2>
+                    </header>
+
+                    <p>Type Ctrl-s in your Cloud9 code editor to save your all of yourk work.</p>
+                </section>
+
 			</div>
 		</div>
 
