@@ -65,7 +65,7 @@
                         <ol>
                             <li style="white-space:nowrap;">Developer tools</li>
                             <li style="white-space:nowrap;">"About Me" HTML page</li>
-                            <li style="white-space:nowrap;">Add _style_ with CSS</li>
+                            <li style="white-space:nowrap;">Add some style with CSS</li>
                         </ol>
                     </section>
                     <section>
@@ -75,8 +75,8 @@
                         </header>
 
                         <ol>
-                            <li style="white-space:nowrap;">Make it interactive with JS</li>
-                            <li style="white-space:nowrap;">Add some animations</li>
+                            <li style="white-space:nowrap;">Create a contact form</li>
+                            <li style="white-space:nowrap;">Send an email with JS</li>
                             <li style="white-space:nowrap;">Save our progress, publish our work</li>
                         </ol>
                     </section>
@@ -99,9 +99,9 @@
                         </header>
 
                         <ol>
-                            <li style="white-space:nowrap;">Create a blog post editor</li>
-                            <li style="white-space:nowrap;">Connect our "Blog" to a database</li>
-                            <li style="white-space:nowrap;">TBD</li>
+                            <li style="white-space:nowrap;">Create a "pin board"</li>
+                            <li style="white-space:nowrap;">Connect our pin board to a database</li>
+                            <li style="white-space:nowrap;">Free time, prepare for tech show</li>
                         </ol>
                     </section>
                 </section>
@@ -483,7 +483,7 @@
                 <section data-background-color="#F5F5F5">
                     <section>
                         <header>
-                            <h2>Getting into HTML</h2>
+                            <h2>HTML: content and structure</h2>
                         </header>
 
                         <div style="display: flex; flex-direction: row; justify-content: center; align-items:center;">
@@ -503,11 +503,524 @@
                                 <div style="height:150px; background-image:url('http://www.mcainternship.in/images/logo/javascript-logo.png');background-repeat:no-repeat;background-size:contain;background-position:center;"></div>
                                 <div style="padding:20px;">
                                 <div>
-                                    <p>Muscles and Nerves</p>
+                                    <p>Muscles</p>
                                 </div>
                             </div>
                         </div>
                     </section>
+                    <section>
+                        <h3>What is HTML made of?</h3>
+
+                        <div style="text-align:left;">
+                            <p>HTML is written with plain text (like you see in a reading book),
+                                and special words which let us create HTML elements.</p> 
+
+                            <pre><code>This is a plain text sentence</code></pre>
+                            <pre><code>&lt;p&gt;"p" is an HTML element called paragraph&lt;p&gt;</code></pre>
+
+                            <p>Notice the less-than symbol and the greater-than symbol.</p>
+
+                            <p>Let's create a web page in real-time.</p>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Create the simplest web page</h3>
+
+                        <div style="text-align: left;">
+                            <p>Go to your Cloud9 workspace, open the empty file named "index.html" and type:</p>
+
+                            <pre><code data-trim>
+About Me
+
+Hi, my name is Max. Welcome!
+This is a site about me.
+                            </code></pre>
+
+                            <p>Type Ctrl-s to save.</p>
+
+                            <p>Hit the "Run" button at the top of your editor.</p>
+
+                            <p>A URL should appear at the bottom of your editor:</p>
+
+                            <pre><code>https://chicktechwebdev-maxenglander.c9users.io/index.html</pre></code>
+
+                            <p>Copy-and-paste it into a new tab and hit ENTER. This tab is now visiting your live page!</p>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Let's add some HTML elements</h3>
+
+                        <div style="text-align: left;">
+                            <p>Let's use some elements: &lt;header&gt;, &lt;h1&gt;, and &lt;p&gt;.</p>
+                            <p>Erase what's in your file, and put in something like this:</p>
+
+                            <pre><code data-trim>
+<header>
+    <h1>About Me</h1>
+</header>
+
+<p>Hi, my name is Max. Welcome!</p>
+<p>This is a site about me.</p> 
+                            </code></pre>
+
+                            <p>Save by hitting Ctrl-s. Go to your live page tab.</p>
+                            <p>How is it different from the plain-text version?</p>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Compare plain text to HTML version</h3>
+
+                        <p>Plain-text version</p>
+                        <div style="text-align: left;">
+                            <pre><code data-trim>
+About Me
+
+Hi, my name is Max. Welcome!
+This is a site about me.
+                            </code></pre>
+                        </div>
+
+                        <p>Version with HTML elements</p>
+                        <div style="text-align: left;">
+                            <pre><code data-trim>
+<header>
+    <h1>About Me</h1>
+</header>
+
+<p>Hi, my name is Max. Welcome!</p>
+<p>This is a site about me.</p> 
+                            </code></pre>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Let's add a short bio section</h3>
+
+                        <div style="text-align:left;">
+                            <p>We can use a &lt;section&gt; element to give a
+                                bit of biographical information about ourselves.</p>
+
+                            <p>Add the following below what we have so far.</p>
+                            <pre><code data-trim no-escape>
+<!-- Leave everything else here -->
+&lt;section&gt;
+    <header>
+        <h2>Bio</h2>
+    </header>
+
+    <p>Max was born in Pennsylvania in 1986. He moved to NYC and became a
+        software developer in 2010.</p>
+    <p>He wishes that he had a cat.</p> 
+&lt;section&gt;
+                            </code></pre>
+
+                            <p>Save and refresh your live page. What changed?</p>
+                            <p>What do you think the &lt;section&gt; element does?</p>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Let's add a favorites section</h3>
+
+                        <div style="text-align:left;">
+                            <p>Let's add a section for our favorite things,
+                                with a sub-section just for movies.</p>
+
+                            <pre><code data-trim no-escape>
+<!-- Everything else that was above here before -->
+&lt;section&gt;
+    <header>
+        <h2>Favorites</h2>
+    </header>
+    <p>These are a few of my favorite things...</p>
+    &lt;section&gt;
+        <header>
+            <h3>Movies</h3>
+        </header>
+        <ul>
+            <li>Gravity</li>
+            <li>Ghostbusters (2016)</li>
+            <li>...</li>
+        </ul>
+    &lt;section&gt;
+&lt;section&gt;
+                            </code></pre>
+
+                            <p>Do we notice any new elements?</p>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Recap and free time</h3>
+
+                        <div style="text-align: left;">
+                            <p>HTML is made of plain text and elements; the
+                                elements are written with special words.</p>
+                            <p>What are the elements we've learned so far?</p>
+                            <p>What do they do?</p>
+                            <p>Take a few minutes of free time to add more sections!</p>
+                        </div>
+                    </section>
+                </section>
+                <section data-background-color="#E3F2FD">
+                    <section>
+                        <header>
+                            <h2>CSS: typography, color, spacing</h2>
+                        </header>
+
+                        <div style="display: flex; flex-direction: row; justify-content: center; align-items:center;">
+                            <div style="padding: 20px">
+                                <div style="height:150px; background-image:url('https://www.w3.org/html/logo/downloads/HTML5_1Color_Black.png');background-repeat:no-repeat;background-size:contain;background-position:center;"></div>
+                                <div style="padding:20px;">
+                                    <p>The Bones</p>
+                                </div>
+                            </div>
+                            <div style="background-color:#90CAF9;padding:20px;">
+                                <div style="height:150px; background-image:url('https://www.ntu.edu.sg/home/ehchua/programming/webprogramming/images/css3.png');background-repeat:no-repeat;background-size:contain;background-position:center;"></div>
+                                <div style="padding:20px;">
+                                    <p>The Skin</p>
+                                </div>
+                            </div>
+                            <div style="padding:20px;">
+                                <div style="height:150px; background-image:url('http://www.mcainternship.in/images/logo/javascript-logo.png');background-repeat:no-repeat;background-size:contain;background-position:center;"></div>
+                                <div style="padding:20px;">
+                                <div>
+                                    <p>Muscles</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <header>
+                            <h3>Let's try changing the font</h3>
+                        </header>
+
+                        <div style="text-align: left;">
+                            <p>Let's add some style to our header:</p>
+
+                            <pre><code>
+<h1 style="font-family: Helvetica;">About Me</h1>
+                            </code></pre>
+
+                            <p>We add style to the &lt;h1&gt; element with
+                                the <em>style</em> attribute.</p>
+                            <p>The <em>font-family</em> property changes the
+                                element's font to the <em>value</em>
+                                of our choosing - Helvetica.</p>
+                            <p>Try it in your editor!</p>
+                        </div>
+                    </section>
+                    <section>
+                        <header>
+                            <h3>Change the <em>font-family</em> of the entire page</h3>
+                        </header>
+
+                        <div style="text-align: left;">
+                            <p>So far, we've only changed the font of our
+                                <em>About Me</em> text.<br/>
+                                How can we change all the text?</p>
+
+                            <pre><code data-trim>
+&lt;body style="font-family: Helvetica;"&gt;
+    <!-- Everything else you have so far -->
+&lt;/body&gt;
+                            </code></pre>
+
+                            <p>Try it in your editor!</p>
+                            <p>Tip: use the following short-cut to auto-format your code:</p>
+                            <pre><code>Ctrl-Shift-B</code></pre>
+                        </div>
+                    </section>
+                    <section>
+                        <header>
+                            <h3>Figure out the <em>font-size</em> of our text</h3>
+                        </header>
+
+                        <div style="text-align:left;">
+                            <p>Open up the Chrome Web Inspector with
+                                the following shortcut:</p>
+                            <pre><code>Ctrl-Shift-I</code></pre>
+                            <p>Select the &lt;h1&gt; element with your
+                                mouse. Can anyone tell what the
+                                <em>font-size</em> is?</p>
+                            <p>What about the &lt;h2&gt;, &lt;h3&gt; elements</p>
+                            <p>Try changing the <em>font-size</em> directly
+                                inside of the Web Inspector.</p>
+                        </div>
+                    </section>
+                    <section>
+                        <header>
+                            <h3>Let's play with <em>font-size</em></h3>
+                        </header>
+
+                        <div style="text-align: left;">
+                            <p>We just learned the default <em>font-size</em>
+                                that Chrome applies to &lt;h1-3&gt; elements,
+                                and also tried making changes directly in the
+                                browser.</p>
+
+                            <p>Now, let's apply these changes to our code:</p>
+
+                            <code><pre>
+<h1 style="font-size:1.5em;">About Me</h1>
+                            </code></pre>
+
+                            <code><pre>
+<h2 style="font-size:1.25em;">Favorites</h2>
+                            </code></pre>
+
+                            <p>What changed? What do we notice?</p>
+                        </div>
+                    </section>
+                    <section>
+                        <header>
+                            <h3>Don't repeat yourself!</h3>
+                        </header>
+
+                        <div style="text-align: left;">
+                            <p>We have multiple &lt;h2&gt; elements on the page,
+                                and we want to change them all to be a slightly
+                                different <em>font-size</em>.</p>
+                            <p>Can we do this without re-typing the same thing
+                                for each of the &lt;h2&gt; elements?</p>
+
+                            <p>Try this:</p>
+
+                            <pre><code data-trim no-escape>
+&lt;head&gt;
+    <style type="text/css">
+        h2 {
+            font-size: 1.2em;
+        }
+    </style>
+&lt;/head&gt;
+<!-- Everything else here -->
+                            </code></pre>
+                        </div>
+                    </section>
+                    <section>
+                        <header>
+                            <h3>Compare and contrast</h3>
+                        </header>
+
+                        <div style="text-align: left;">
+                            <p>Applying CSS with the &lt;style&gt; <em>attribute</em>:
+                                this is useful when you wan to make a <em>particular</em>
+                                element look a certain way.</p>
+
+                            <code><pre data-trim no-escape>
+<h2 style="font-size:1.25em;">Favorites</h2>
+                            </code></pre>
+
+                            <p>Applying CSS with the &lt;style&gt; <em>element</em>:
+                                this is useful when you want to make make the same
+                                <em>kinds</em> of thing look the same way.</p>
+
+                            <pre><code data-trim no-escape>
+&lt;head&gt;
+    <style type="text/css">
+        h2 {
+            font-size: 1.2em;
+        }
+    </style>
+&lt;/head&gt;
+<!-- Everything else here -->
+                            </code></pre>
+                        </div>
+                    </section>
+                    <section>
+                        <header>
+                            <h3>Let's get a little colorful</h3>
+                        </header>
+
+                        <div style="text-align: left;">
+                            <p>Try applying the &lt;background-color&gt; property
+                                to the <em>body</em> selector in our &lt;style&gt; element.</p>
+
+                            <pre><code data-trim no-escape>
+&lt;head&gt;
+    <style type="text/css">
+        /* Add this! */
+        body {
+            background-color: #FCE4EC;
+        }
+
+        /* Leave the other stuff that was here before */
+    </style>
+&lt;/head&gt;
+<!-- Leave the other stuff that was here before -->
+                            </code></pre>
+
+                            <p>What changed?</p>
+                        </div>
+                    </section>
+                    <section>
+                        <header>
+                            <h3>Let's get even more colorful</h3>
+                        </header>
+
+                        <div style="text-align:left;">
+                            <p>Let's modify one of our sections by giving
+                                it cool background colors:</p>
+
+                            <pre><code>
+<!-- Stuff that was already above here -->
+&lt;section style="background-color:#FFF8E1"&gt;
+    <header style="background-color:#FFECB3">
+        <h2>Bio</h2>
+    </header>
+
+    <p>Max was born in Pennsylvania in 1986. He moved to NYC and became a
+        software developer in 2010.</p>
+    <p>He wishes that he had a cat.</p> 
+&lt;section&gt;
+<!-- Everything else that was below here -->
+                            </code></pre>
+
+                            <p>Was anyone surprised by how this changed
+                                the page? Did adding these colors reveal
+                                anything about the way HTML structure works?</p>
+                        </div>
+                    </section>
+                    <section>
+                        <header>
+                            <h3>Let's get really colorful</h3>
+                        </header>
+
+                        <p>Take a couple of minutes to apply background colors
+                            to different parts of your web page.</p>
+
+                        <p>
+                            <a href="https://material.google.com/style/color.html#color-color-palette">Here's a helpful color palette.</a>
+                        </p>
+                    </section>
+                    <section>
+                        <header>
+                            <h3>Paragraph width and line spacing</h3>
+                        </header>
+
+                        <div style="text-align: left;">
+                            <p>Spend a few minutes experimenting with these two new
+                                CSS properties. Try giving them different values.</p>
+                            <pre><code data-trim>
+&lt;head&gt;
+    <style type="text/css">
+        /* Leave the other stuff that was here before */
+
+        /* Add this! */
+        p {
+            line-height: 1.8em;
+        }
+
+        /* And this! */
+        section {
+            max-width: 50ch;
+        }
+    </style>
+&lt;/head&gt;
+<!-- Leave the other stuff that was here before -->
+                            </code></pre>
+
+                            <p>What changed? What did these two CSS properties do?
+                                What does the <em>ch</em> unit represent?</p>
+                        </div>
+                    </section>
+                    <section>
+                        <header>
+                            <h3></h3>
+                        </header>
+
+                        <div style="text-align: left;">
+                            <p>Spend a few minutes experimenting with these two new
+                                CSS properties. Try giving them different values.</p>
+                            <pre><code data-trim>
+&lt;head&gt;
+    <style type="text/css">
+        /* Leave the other stuff that was here before */
+
+        /* Add this! */
+        section {
+            line-height: 1.8em;
+            max-width: 50ch;
+        }
+    </style>
+&lt;/head&gt;
+<!-- Leave the other stuff that was here before -->
+                            </code></pre>
+
+                            <p>What changed? What do these two CSS properties do?
+                                What does the <em>ch</em> unit represent?</p>
+                        </div>
+                    </section>
+                    <section>
+                        <header>
+                            <h3>Centering our content</h3>
+                        </header>
+
+                        <div style="text-align: left;">
+                            <p>We can move all of our content
+                                to the center of the page, to make the
+                                empty space appear more "balanced".</p>
+                            <p>
+
+                            <pre><code data-trim no-escape>
+&lt;head&gt;
+    <style type="text/css">
+        body {
+            background-color: #FCE4EC;
+
+            /* Add these! */
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Leave the other stuff that was here before */
+    </style>
+&lt;/head&gt;
+&lt;body&gt;
+    <!-- Add this! -->
+    <div>
+        <!-- Put the other stuff inside here -->
+    </div>
+&lt;/body&gt;
+                            </code></pre>
+                        </div>
+                    </section>
+                </section>
+                <section data-background-color="#FFF8E1">
+                    <section>
+                        <header>
+                            <h2>JS: respond to events with actions</h2>
+                        </header>
+
+                        <div style="display: flex; flex-direction: row; justify-content: center; align-items:center;">
+                            <div style="padding: 20px">
+                                <div style="height:150px; background-image:url('https://www.w3.org/html/logo/downloads/HTML5_1Color_Black.png');background-repeat:no-repeat;background-size:contain;background-position:center;"></div>
+                                <div style="padding:20px;">
+                                    <p>The Bones</p>
+                                </div>
+                            </div>
+                            <div style="padding:20px;">
+                                <div style="height:150px; background-image:url('https://www.ntu.edu.sg/home/ehchua/programming/webprogramming/images/css3.png');background-repeat:no-repeat;background-size:contain;background-position:center;"></div>
+                                <div style="padding:20px;">
+                                    <p>The Skin</p>
+                                </div>
+                            </div>
+                            <div style="background-color:#FFECB3;padding:20px;">
+                                <div style="height:150px; background-image:url('http://www.mcainternship.in/images/logo/javascript-logo.png');background-repeat:no-repeat;background-size:contain;background-position:center;"></div>
+                                <div style="padding:20px;">
+                                <div>
+                                    <p>Muscles</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <header>
+                            <h2>First, let's build a simple contact form</h2>
+                        </header>
+
+                        <div style="text-align:left;">
+                        </div>
                 </section>
 			</div>
 		</div>
