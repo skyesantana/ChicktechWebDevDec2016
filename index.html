@@ -1,0 +1,99 @@
+<head>
+    <style type="text/css">
+        body {
+            background-color:#FFCDD2;
+            align-items:center;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+        }
+        h2{
+            font-size:medium;
+        }
+        section{
+            border-left:1px solid transparent;
+            max-width:50ch;
+            background-color:#FFF8E1;
+        }
+    </style>
+    <script src="js/mailer.js" type="text/javascript"></script>
+</head>
+
+
+<body style ="font-family: helvetica;">
+    <div>
+        
+<header>
+    <h1 style="font-size:2.3em;">About Me</h1>
+</header>
+<p>My name is Schyla. </p>
+<p>This is my personal website. </p>
+
+<section style="background-color:#B3E5FC">
+    <header style="background-color:#ECEFF1">
+        <h2>Bio</h2>
+    </header>
+    <p>I was born in Brooklyn in 2000. I lived in Brooklyn all my life. I go to Fashion Industries High School</p>
+</section>
+
+<section>
+    <header>
+        <h2>Favorites</h2>
+    </header>
+    <p> Few of My Favorite Things </p>
+    <section style="background-color:#B3E5FC">
+        <header>
+            <h3>Movies</h3>
+        </header>
+        <ul>
+            <li>Avengers</li>
+            <li>Suicide Squad </li>
+        </ul>
+    </section>
+    <section>
+        <header>
+            <h4>TV Shows</h4>
+        </header>
+        <ul>
+            <li>Love And Hip Hop</li>
+            <li>The Flash</li>
+            <li> Empire</li>
+        </ul>
+    </section>
+    <section>
+        
+    
+</section>
+
+
+
+
+
+<section>
+    <header>
+        <h2>Least Favorites</h2>
+    </header>
+    <p> These are some of my least favorite things </p>
+    <section>
+        <header>
+            <h3>Foods</h3>
+        </header>
+    
+    </section>
+   </div>
+</section>
+    
+</section>
+    <header>
+        <h2>Contact Me</h2>
+     </header>
+     <textarea id="message" rows="8" style= "width:100%;">
+     </textarea>
+     <button onclick="mailer.send(document.getElementById('message').value)">Send</button> 
+    </section>
+  </div>
+ </body>
+ 
+
+ 
+

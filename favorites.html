@@ -1,0 +1,79 @@
+<head>
+    <title>Favorites</title>
+    <style type="text/css">
+
+    </style>
+    <script type="text/javascript" src="js/favorites.js"></script>
+</head>
+
+
+<body>
+    <div id="page" <div id="navigation">
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">About Me</a>
+                </li>
+                <li class="active">
+                    <a href="favorites.html">Favorites</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div id="controls">
+        <header>
+            <h2>Controls</h2>
+        </header>
+
+        <section class="control">
+            <header>
+                <h3>New Favorites
+                    <h/3>
+            </header>
+
+            <form action="javascript:createFavorite();" id="creator">
+                <fieldset>
+                    <label>Title</label>
+                    <input id="creator-title" type="text" />
+                </fieldset>
+                <fieldset>
+                    <label>Description</label>
+                    <div>
+                        <textarea id="creator-description" rows="5">
+                         </textarea>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <label>Media</Label>
+                    <input id="creator-media" type="text" />
+                </fieldset>
+                <fieldset>
+                    <button>Create</button>
+                </fieldset>
+            </form>
+        </section>
+    </div>
+    <div id="content">
+        <header>
+            <h2>Favorites</h2>
+        </header>
+
+        <article class="favorite">
+            <header>
+                <h3 class="title">
+                    English
+                </h3>
+            </header>
+
+            <div class="media">
+                <iframe src="//giphy.com/embed/l0MYQhHXYL9WPdm9O" width="480" height="251" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                <p><a href="http://giphy.com/gifs/gina-torres-latinawomen-latina-women-l0MYQhHXYL9WPdm9O">via GIPHY</a></p>
+            </div>
+
+            <p class="description">
+                I love to laugh and smile.So this GIF resembles me as a person.
+            </p>
+        </article>
+    </div>
+    </div>
+</body>
